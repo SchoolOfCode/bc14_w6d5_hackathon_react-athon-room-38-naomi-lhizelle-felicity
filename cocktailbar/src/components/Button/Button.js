@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
-function Button({ drink }) {
+
+function Button({ drink, uplift }) {
   const [thumbnail, setThumbnail] = useState("");
   const [name, setName] = useState("");
   const [ingredient, setIngredient] = useState([]);
@@ -10,7 +11,7 @@ function Button({ drink }) {
       `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drink}`
     );
     const data = await response.json();
-    console.log(data);
+    //console.log(data);
 
     setThumbnail(data.drinks[0].strDrinkThumb);
     setName(data.drinks[0].strDrink);
@@ -26,14 +27,15 @@ function Button({ drink }) {
     setIngredient((prevIngredients) => [...prevIngredients, ...newIngredients]);
   }
 
-  console.log(ingredient);
+  //console.log(ingredient);
+
   useEffect(() => {
     fetchCocktail();
   }, []);
 
   return (
     <>
-      <img src={thumbnail} alt="" />
+      <button onClick={() => {uplift(ingredient)}} ><img src={thumbnail} alt="" /></button>
       <h1>{name}</h1>
     </>
   );
