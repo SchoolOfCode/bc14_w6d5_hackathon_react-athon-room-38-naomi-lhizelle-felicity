@@ -17,7 +17,7 @@ import '../App/App.css';
 import { useState, useEffect } from "react";
 
 // Defining a new component called "Button".
-function Button({ drink, uplift }) {
+function Button({ drink, uplift, toggleContainer }) {
   // Using the useState hook to create three state variables: "thumbnail", "name", and "ingredient".
   const [thumbnail, setThumbnail] = useState("");
   const [name, setName] = useState("");
@@ -60,7 +60,7 @@ function Button({ drink, uplift }) {
   return (
     <>
         <div className="">
-        <button onClick={() => { uplift(ingredient)}} ><img src={thumbnail} alt="" /></button>
+        <button onClick={() => { uplift(ingredient); toggleContainer(); }} ><img src={thumbnail} alt="" /></button>
         <h1>{name}</h1>
         </div>
     </>
