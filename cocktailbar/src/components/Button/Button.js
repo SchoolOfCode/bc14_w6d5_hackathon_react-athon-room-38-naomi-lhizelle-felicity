@@ -15,8 +15,8 @@ function Button({ drink, uplift }) {
 
     setThumbnail(data.drinks[0].strDrinkThumb);
     setName(data.drinks[0].strDrink);
-    // setIngredient(data.drinks[0].strIngredient1);
-    // setIngredient([...ingredient, data.drinks[0].strIngredient2]);
+    
+
     const newIngredients = [];
     for (let i = 1; i < 15; i++) {
       const ingredientProp = `strIngredient${i}`;
@@ -24,8 +24,12 @@ function Button({ drink, uplift }) {
         newIngredients.push(data.drinks[0][ingredientProp]);
       }
     }
-    setIngredient((prevIngredients) => [...prevIngredients, ...newIngredients]);
-  }
+  setIngredient((prevIngredients) => {
+  const updatedIngredients = [...prevIngredients, ...newIngredients];
+  uplift(updatedIngredients);
+  return updatedIngredients;
+});
+}
 
   //console.log(ingredient);
 
@@ -35,7 +39,7 @@ function Button({ drink, uplift }) {
 
   return (
     <>
-      <button onClick={() => {uplift(ingredient)}} ><img src={thumbnail} alt="" /></button>
+      <button onClick={() => { uplift(ingredient)}} ><img src={thumbnail} alt="" /></button>
       <h1>{name}</h1>
     </>
   );

@@ -10,19 +10,18 @@ function App() {
   const [data, setData] = useState('');
 
    function uplift(ingredient) {
-    return(
     setData(ingredient)
-    )};
+    };
 
     console.log(data);
 
   return (
     <div className="App">
-      <Button onClick = {uplift} drink={"blue%20margarita"}/>
-      <Button onClick = {uplift} drink={"strawberry%20shivers"}/>
-      <Button onClick = {uplift} drink={"blue%20lagoon"}/>
+      <Button uplift = {uplift} drink={"blue%20margarita"}/>
+      <Button uplift = {uplift} drink={"strawberry%20shivers"}/>
+      <Button uplift = {uplift} drink={"blue%20lagoon"}/>
 
-      {/* <Container /> */}
+      <Container data ={data}/>
     </div>
   );
 }

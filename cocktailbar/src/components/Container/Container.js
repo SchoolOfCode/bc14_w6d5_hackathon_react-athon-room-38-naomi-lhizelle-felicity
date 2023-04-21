@@ -1,12 +1,17 @@
-// function Container ({ingredient}) {
-
-//     return <>
-//         <ul>
-//             {ingredient.map((ingredient, index) => {
-//                 return <li key={index}>{ingredient}</li>
-//             })}
-//         </ul>
-//     </>
-// }
-
-// export default Container;
+function Container({ data }) {
+    if (data) {
+      const uniqueData = [...new Set(data)]; // Remove duplicates using Set
+      return (
+        <ul>
+          {uniqueData.map((item, index) => {
+            return <li key={index}>{item}</li>;
+          })}
+        </ul>
+      );
+    } else {
+      return null;
+    }
+  }
+  
+  export default Container;
+  
