@@ -1,3 +1,5 @@
+import '../App/App.css';
+
 import { useState, useEffect } from "react";
 
 
@@ -39,8 +41,11 @@ function Button({ drink, uplift }) {
 
   return (
     <>
-      <button onClick={() => { uplift(ingredient)}} ><img src={thumbnail} alt="" /></button>
-      <h1>{name}</h1>
+        <div className="">
+        <button onClick={() => { uplift(ingredient)}} ><img src={thumbnail} alt="" /></button>
+        <h1>{name}</h1>
+        </div>
+        
     </>
   );
 }

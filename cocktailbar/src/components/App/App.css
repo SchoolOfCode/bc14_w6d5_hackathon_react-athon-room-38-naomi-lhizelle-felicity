@@ -1,0 +1,59 @@
+button img
+{
+    width: 300px;
+    height: 300px;
+    margin: 20px;
+    padding: 0px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+button
+{
+    background-color: white;
+    border: none;
+}
+
+.App
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.ingreds-list
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1.5em;
+    background-color: #E2E2E2;
+    padding: 40px;
+}
+
+.button-container
+{
+    display: flex;
+    flex-direction: row;
+}
+
+h1, h2
+{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+.order-button
+{
+    font-size: 1.15em;
+    border-radius: 10px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.page-container
+{
+    width: 100%; /* set container width to 100% of its parent element */
+    max-width: 1200px; /* set a maximum width to prevent the container from becoming too wide on larger screens */
+    margin: 0 auto; /* center the container horizontally */
+    padding: 20px; /* add some padding to the container to give the contents some breathing room */
+    box-sizing: border-box; /* include padding and border in the element's total width */ 
+}

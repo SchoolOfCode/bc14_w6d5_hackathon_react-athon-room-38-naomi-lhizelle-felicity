@@ -4,9 +4,7 @@ import Container from '../Container/Container';
 import { useState } from "react";
 
 
-
 function App() {
-
   const [data, setData] = useState('');
 
    function uplift(ingredient) {
@@ -15,16 +13,18 @@ function App() {
 
     console.log(data);
 
-  return (
+  return <div className="page-container">
+    <h1>The Night Jar</h1>
     <div className="App">
-      <Button uplift = {uplift} drink={"blue%20margarita"}/>
-      <Button uplift = {uplift} drink={"strawberry%20shivers"}/>
-      <Button uplift = {uplift} drink={"blue%20lagoon"}/>
-
+      <div className="button-container">
+        <Button uplift = {uplift} drink={"blue%20margarita"}/>
+        <Button uplift = {uplift} drink={"strawberry%20shivers"}/>
+        <Button uplift = {uplift} drink={"blue%20lagoon"}/>
+      </div>
       <Container data ={data}/>
     </div>
-  );
-}
+  </div>
+};
 
 
 export default App;
